@@ -10,9 +10,31 @@
 
 #include "Colas.h"
 
-void* Desencolar(COLA *Cola)
+void *Desencolar(COLA *Cola)
 {
-    
+
     // Código del Alumno
-    
+    NODO *qAux;
+    void *valor;
+
+    if (!EsColaVacia(Cola) || Cola->Cabecera != NULL)
+    {
+        qAux = Cola->Cabecera;
+        valor = qAux->Elemento;
+
+        if (qAux->Siguiente == NULL)
+        {
+            Cola->Cabecera = NULL;
+            Cola->Final = NULL;
+        }
+        else
+        {
+            Cola->Cabecera = Cola->Cabecera->Siguiente;
+        }
+
+        free(qAux);
+        return (valor);
+    }
+
+    return NULL;
 }
