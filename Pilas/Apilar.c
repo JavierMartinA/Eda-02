@@ -14,5 +14,15 @@ PILA *Apilar(PILA *Pila,void *Elemento)
 {
 
     // Código del Alumno
-    
+    PILA *pAux;
+
+    pAux = malloc(sizeof(PILA));
+    //Compruebo que se me ha dado la memoria
+    if (pAux != NULL)
+    {
+        strcpy(pAux->Elemento, Elemento);
+        pAux->Siguiente = Pila;
+
+        Pila = pAux;
+    }
 }

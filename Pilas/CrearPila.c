@@ -11,7 +11,7 @@
 
 PILA *CrearPila()
 {
-
     // Código del Alumno
-  
+    PILA* p;
+    p = NULL;
 }
