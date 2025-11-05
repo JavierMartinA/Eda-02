@@ -15,8 +15,17 @@ DISCO **InitOrden(DISCO *Fichas)
 {
     
     // Código del alumno
-    DISCO **InitOrden;
-    InitOrden = malloc(sizeof(Fichas));
-    InitOrden = &Fichas;
-    return (InitOrden);
+    DISCO **InitOrden; //Creo el array de punteros
+    //Reservo memoria para el doble puntero, que tendrá espacio para un puntero a Disco multiplicado por el número de fichas
+    InitOrden = (DISCO**) malloc(Estadisticas.NumeroFichas*sizeof(DISCO*)); 
+    if (InitOrden !=NULL)
+    {
+        for (int i = 0; i < Estadisticas.NumeroFichas; i++)
+        {
+            InitOrden[i] = &(Fichas[i]);
+        }
+        return (InitOrden);
+    }
+    VentanaError("No hay espacio");
+    
 }
