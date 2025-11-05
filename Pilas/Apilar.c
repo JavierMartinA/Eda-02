@@ -25,4 +25,5 @@ PILA *Apilar(PILA *Pila,void *Elemento)
 
         Pila = pAux;
     }
+    free(pAux);
 }

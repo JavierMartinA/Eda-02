@@ -14,5 +14,15 @@ PILA *Desapilar(PILA *Pila,void **Elemento)
 {
 
     // Código del Alumno
-    
+    PILA *pAux;
+
+    pAux = malloc(sizeof(PILA));
+
+    if (!EsPilaVacia(Pila))
+    {
+        pAux = Pila;
+        strcpy(Elemento, pAux->Elemento);
+        Pila = Pila->Siguiente;
+        free(pAux);
+    }
 }

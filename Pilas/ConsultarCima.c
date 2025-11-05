@@ -13,5 +13,5 @@ void *ConsultarCima(PILA *Pila)
 {
 
     // Código del Alumno
-         
+    return (Pila->Elemento);
 }

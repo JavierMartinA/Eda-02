@@ -14,5 +14,13 @@ bool EsPilaVacia(PILA *Pila)
 {
 
     // Código del Alumno
-  
+    //Si la Pila no apunta a algo y por lo tanto no tiene ningún elemento 
+    if (Pila == NULL)
+    {
+        return (true);
+    }
+
+    //Si la Pila apunta a algo
+    return (false);
+    
 }
