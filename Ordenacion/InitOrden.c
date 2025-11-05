@@ -15,5 +15,8 @@ DISCO **InitOrden(DISCO *Fichas)
 {
     
     // Código del alumno
-    
+    DISCO **InitOrden;
+    InitOrden = malloc(sizeof(Fichas));
+    InitOrden = &Fichas;
+    return (InitOrden);
 }
