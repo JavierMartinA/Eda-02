@@ -6,7 +6,7 @@
  *              Se aloca el espacio que sea necesario
  * Reglas de uso: La cola debe estar creada
  * Código de Retorno:  0 - Éxito
- *                    -1 - La Cola no está creada o no se pudo alocar espacio nuevo 
+ *                    -1 - La Cola no está creada o no se pudo alocar espacio nuevo
  * Programador:
  *****************************************/
 
@@ -14,7 +14,35 @@
 
 int Encolar(COLA *Cola, void *Elemento)
 {
-    
+
     // Código del Alumno
-    
+    NODO *qAux;
+
+    qAux = malloc(sizeof(NODO));
+
+    if (qAux != NULL)
+    {
+        if (!EsColaVacia(Cola))
+        {
+            qAux->Elemento = Elemento;
+            qAux->Siguiente = NULL;
+            if (Cola->Cabecera == NULL)
+            {
+                Cola->Cabecera = qAux;
+            }
+            else
+            {
+                Cola->Final->Siguiente = qAux;
+            }
+
+            Cola->Final = qAux;
+            return (0);
+        }
+
+        free(qAux);
+        return (-1);
+    }
+
+    free(qAux);
+    return (-1);
 }
