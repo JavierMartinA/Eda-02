@@ -14,5 +14,15 @@ COLA *CrearCola()
 {
     
     // Código del Alumno
+    COLA *c;
+
+    c = (COLA *) malloc(sizeof(COLA));
+
+    if(c!=NULL)
+    {
+        c ->Cabecera = NULL;
+        c ->Final = NULL;
+    }
     
+    return(c);
 }
