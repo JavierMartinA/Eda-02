@@ -16,33 +16,33 @@ int Encolar(COLA *Cola, void *Elemento)
 {
 
     // Código del Alumno
-    NODO *qAux;
+    NODO *qAux; //creamos un puntero de tipo NODO
 
-    qAux = malloc(sizeof(NODO));
+    qAux = malloc(sizeof(NODO)); //Reservar memoria para qAux
 
-    if (qAux != NULL)
+    if (qAux != NULL) //Comprobar que se le ha asignado correctamente la memoria a qAux
     {
-        if (!EsColaVacia(Cola))
+        if (!EsColaVacia(Cola)) //Comprobar que la cola existe
         {
-            strcpy(qAux->Elemento, Elemento);
-            qAux->Siguiente = NULL;
-            if (Cola->Cabecera == NULL)
+            qAux->Elemento= Elemento; //Apuntamos el puntero elemento al elemento que queremos añadir
+            qAux->Siguiente = NULL; //Como el nuevo elemento se va a poner al final de la cola, porque las cosas se añaden por el final en las colas, su puntero siguiente no apunta a nada
+            if (Cola->Cabecera == NULL) //Si la pila no contiene elementos
             {
-                Cola->Cabecera = qAux;
+                Cola->Cabecera = qAux; //El elemento se coloca en la cabecera
             }
             else
             {
-                Cola->Final->Siguiente = qAux;
+                Cola->Final->Siguiente = qAux; //Si ya hay más elemento en la cola, el nuevo elemento se coloca al final
             }
 
-            Cola->Final = qAux;
-            return (0);
+            Cola->Final = qAux; //El final de la cola ahora es qAux
+            return (0); //Todo a salido bien
         }
 
-        free(qAux);
-        return (-1);
+        free(qAux); //Liberar el puntero qAux
+        return (-1); //La cola no existia, por lo tanto retornamos -1
     }
 
-    free(qAux);
-    return (-1);
+    free(qAux); //Liberamos el puntero qAux
+    return (-1); //No había espacio para dar a qAux, por lo tanto retornamos qAux
 }

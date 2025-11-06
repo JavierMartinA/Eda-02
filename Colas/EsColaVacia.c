@@ -14,11 +14,11 @@ bool EsColaVacia(COLA *Cola)
 {
     
     // Código del Alumno
-    if(Cola == NULL)
+    if(Cola == NULL || Cola->Cabecera == NULL)
     {
-        return(true);//La cola esta vacia
+        return(true);//La cola no tiene elementos
     }
 
-    return(false);//La cola apunta a algo
+    return(false);//La cola tiene algún elemento
     
 }

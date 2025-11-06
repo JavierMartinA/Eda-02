@@ -14,27 +14,28 @@ void *Desencolar(COLA *Cola)
 {
 
     // Código del Alumno
-    NODO *qAux;
-    void *valor;
+    NODO *qAux; //Creamos un puntero de tipo NODO
 
-    if (!EsColaVacia(Cola) || Cola->Cabecera != NULL)
+    void *valor; //Creamos un puntero void donde guardar el elemento eliminado que tenemos que retornar si todo ha salido bien
+
+    if (!EsColaVacia(Cola) || Cola->Cabecera != NULL) //Comporobamos que existe tanto la pila, como elemento dentro de la pila
     {
-        qAux = Cola->Cabecera;
-        valor = qAux->Elemento;
+        qAux = Cola->Cabecera; //Apuntamos qAux a la cabecera, porque los elementos en las colas se eliminandesde el principio
+        valor = qAux->Elemento; //Apuntamos el puntero valor al elemento que vamos a eliminar
 
-        if (qAux->Siguiente == NULL)
+        if (qAux->Siguiente == NULL) //Comprobamos si solo existe la cabecera
         {
-            Cola->Cabecera = NULL;
-            Cola->Final = NULL;
+            Cola->Cabecera = NULL; //Inicializamos la cabecera a NULL para eliminar el elemento
+            Cola->Final = NULL; //Inizializamos el final a NULL para eliminar el elemento
         }
         else
         {
-            Cola->Cabecera = Cola->Cabecera->Siguiente;
+            Cola->Cabecera = Cola->Cabecera->Siguiente; //Movemos la cabecera al siguiente elemento de la cola
         }
 
-        free(qAux);
-        return (valor);
+        free(qAux); //Liberamos el puntero qAux, eliminando de esa forma el elemnto de la cabecera original
+        return (valor); //retornamos el elemento eliminado
     }
 
-    return NULL;
+    return NULL; //La cola no existia o no contenia nada
 }
