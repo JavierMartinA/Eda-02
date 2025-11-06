@@ -24,7 +24,7 @@ int Encolar(COLA *Cola, void *Elemento)
     {
         if (!EsColaVacia(Cola))
         {
-            qAux->Elemento = Elemento;
+            strcpy(qAux->Elemento, Elemento);
             qAux->Siguiente = NULL;
             if (Cola->Cabecera == NULL)
             {
