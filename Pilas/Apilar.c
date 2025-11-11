@@ -27,4 +27,5 @@ PILA *Apilar(PILA *Pila,void *Elemento)
         Pila = pAux; //Hago el puntero Pila apunte al primer nodo 
     }
     free(pAux); //Libero la memoria del puntero auxiliar
+    return (Pila);
 }

@@ -22,6 +22,7 @@ int Encolar(COLA *Cola, void *Elemento)
 
     if (qAux != NULL) //Comprobar que se le ha asignado correctamente la memoria a qAux
     {
+        //Mirar
         if (!EsColaVacia(Cola)) //Comprobar que la cola existe
         {
             qAux->Elemento= Elemento; //Apuntamos el puntero elemento al elemento que queremos añadir
@@ -36,6 +37,7 @@ int Encolar(COLA *Cola, void *Elemento)
             }
 
             Cola->Final = qAux; //El final de la cola ahora es qAux
+            free(qAux); //Liberar el puntero qAux
             return (0); //Todo a salido bien
         }
 

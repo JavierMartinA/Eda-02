@@ -16,7 +16,7 @@ void *ConsultarCola(COLA *Cola)
     // Código del Alumno
     if(!EsColaVacia(Cola)) //Comprobar que la cola está creada
     {
-        return(Cola -> Cabecera); //Si la cola está creada, se devuelve la cabecera
+        return(Cola -> Cabecera -> Elemento); //Si la cola está creada, se devuelve la cabecera
     }
 
     return NULL; //Si no existe la cola se devuelve NULL

@@ -24,4 +24,6 @@ PILA *Desapilar(PILA *Pila,void **Elemento)
         Pila = Pila->Siguiente; //Hago que la pila apunte al siguiente nodo para poder olvidar el nodo del cuál acabo de cojer el elemento
         free(pAux); //Libero la memoria del puntero auxiliar 
     }
+
+    return (Pila);
 }
