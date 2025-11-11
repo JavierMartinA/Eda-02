@@ -12,6 +12,7 @@
 PILA *CrearPila()
 {
     // Código del Alumno
-    PILA* p;
-    p = NULL;
+    PILA* p; //Declaro el puntero de tipo PILA
+    p = NULL; //Inicializo el puntero a null
+
 }

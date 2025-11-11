@@ -14,14 +14,14 @@ PILA *Desapilar(PILA *Pila,void **Elemento)
 {
 
     // Código del Alumno
-    PILA *pAux;
+    PILA *pAux; //Creo el puntero auxiliar
 
 
-    if (EsPilaVacia(Pila))
+    if (!EsPilaVacia(Pila)) //Si la pila no está vacía, desapilo el primero elemento
     {
-        pAux = Pila;
-        strcpy(*Elemento, pAux->Elemento);
-        Pila = Pila->Siguiente;
-        free(pAux);
+        pAux = Pila; //El puntero auxiliar apunta al primer nodo de la pila
+        strcpy(*Elemento, pAux->Elemento); //Copio el elemento del primer nodo al elemento del nodo auxiliar que he creado
+        Pila = Pila->Siguiente; //Hago que la pila apunte al siguiente nodo para poder olvidar el nodo del cuál acabo de cojer el elemento
+        free(pAux); //Libero la memoria del puntero auxiliar 
     }
 }

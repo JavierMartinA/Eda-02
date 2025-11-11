@@ -20,10 +20,11 @@ PILA *Apilar(PILA *Pila,void *Elemento)
     //Compruebo que se me ha dado la memoria
     if (pAux != NULL)
     {
-        strcpy(pAux->Elemento, Elemento);
-        pAux->Siguiente = Pila;
+        pAux->Elemento = malloc(strlen(Elemento)+1); //Pido memoria para el puntero Elemento 
+        strcpy(pAux->Elemento, Elemento); //Copio el valor del elemento al puntero
+        pAux->Siguiente = Pila; //Encadeno el nuevo nodo al que anteriormente era el primero
 
-        Pila = pAux;
+        Pila = pAux; //Hago el puntero Pila apunte al primer nodo 
     }
-    free(pAux);
+    free(pAux); //Libero la memoria del puntero auxiliar
 }

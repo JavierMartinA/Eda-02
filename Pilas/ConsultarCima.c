@@ -13,5 +13,7 @@ void *ConsultarCima(PILA *Pila)
 {
 
     // Código del Alumno
-    return (Pila->Elemento);
+    if (!EsPilaVacia(Pila)){ //Compruebo si la no está vacía
+        return (Pila->Elemento);//Devuelvo el primer elemento de la cola
+    }
 }
