@@ -13,5 +13,11 @@ void *ConsultarListaIzquierda(LISTA *Lista)
 {
     
     // Código del Alumno
+
+    if(!EsListaVacia(Lista)) //Comprobar que la cola está creada y tiene elementos
+    {
+        return(Lista->Primero->Elemento); //Devolver el primer elemento de la lista (el que está más a la izquierda)
+    }
     
+    return NULL; //La lista no existe o no contiene nada
 }

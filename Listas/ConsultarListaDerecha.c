@@ -14,4 +14,10 @@ void *ConsultarListaDerecha(LISTA *Lista)
     
     // Código del Alumno
     
+    if(!EsListaVacia(Lista)) //Comprobar que la cola está creada y tiene elementos
+    {
+        return(Lista->Ultimo->Elemento); //Devolver el ultimo elemento de la lista (el que está más a la derecha)
+    }
+    
+    return NULL; //La lista no existe o no contiene nada
 }
