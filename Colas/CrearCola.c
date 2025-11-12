@@ -20,7 +20,9 @@ COLA *CrearCola()
 
     if(c!=NULL)
     {
+        c->Cabecera = (NODO*) malloc(sizeof(NODO));
         c ->Cabecera = NULL;
+        c->Final = (NODO*) malloc(sizeof(NODO));
         c ->Final = NULL;
 
         return(c);

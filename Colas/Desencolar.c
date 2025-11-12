@@ -15,13 +15,10 @@ void *Desencolar(COLA *Cola)
 
     // Código del Alumno
     NODO *qAux; // Creamos un puntero de tipo NODO
-
     void *valor; // Creamos un puntero void donde guardar el elemento eliminado que tenemos que retornar si todo ha salido bien
 
-    qAux = malloc(sizeof(NODO)); // Reservar memoria para qAux
-
-    if (qAux != NULL) // Comprobar que se le ha asignado correctamente la memoria a qAux
-    {
+    // if (qAux != NULL) // Comprobar que se le ha asignado correctamente la memoria a qAux
+    // {
         if (!EsColaVacia(Cola) || Cola->Cabecera != NULL) // Comporobamos que existe tanto la pila, como elemento dentro de la pila
         {
             qAux = Cola->Cabecera;  // Apuntamos qAux a la cabecera, porque los elementos en las colas se eliminandesde el principio
@@ -40,6 +37,6 @@ void *Desencolar(COLA *Cola)
             free(qAux);     // Liberamos el puntero qAux, eliminando de esa forma el elemnto de la cabecera original
             return (valor); // retornamos el elemento eliminado
         }
-    }
+    // }
     return NULL; // La cola no existia o no contenia nada
 }

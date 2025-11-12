@@ -17,7 +17,9 @@ LISTA *CrearLista()
     n = (LISTA *)malloc(sizeof(LISTA));//memoria dinamica
 
     if(n!=NULL){ //Si se logra reservar memoria para la lista entonces
+        n->Primero = (NODO*) malloc(sizeof(NODO));
         n->Primero=NULL; //inicializamos lista vacia
+        n->Ultimo = (NODO*) malloc(sizeof(NODO));
         n->Ultimo=NULL;
     }
 

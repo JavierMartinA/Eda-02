@@ -15,14 +15,13 @@ PILA *Apilar(PILA *Pila,void *Elemento)
 
     // Código del Alumno
     PILA *pAux; //Declaro el puntero auxiliar
-
-    // pAux =(PILA*) malloc(sizeof(PILA)); //Pido memoria para el puntero auxiliar
+    pAux = Pila;
+    Pila =(PILA*) malloc(sizeof(PILA)); //Pido memoria para el puntero auxiliar
     //Compruebo que se me ha dado la memoria
-    if (pAux != NULL)
+    if (Pila != NULL)
     {
-        strcpy(pAux->Elemento, Elemento); //Copio el valor del elemento al puntero
-        pAux->Siguiente = Pila; //Encadeno el nuevo nodo al que anteriormente era el primero
-        Pila = pAux; //Hago el puntero Pila apunte al primer nodo 
+        Pila->Elemento = Elemento; //Copio el valor del elemento al puntero
+        Pila->Siguiente = pAux; //Encadeno el nuevo nodo al que anteriormente era el primero
     }
     return (Pila);
 }

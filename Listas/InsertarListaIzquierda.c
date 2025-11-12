@@ -15,29 +15,18 @@ int InsertarListaIzquierda(LISTA *Lista, void *Elemento)
 {
 
     // Código del Alumno
+    // Código del Alumno
     if (!EsListaVacia(Lista))
     {
-        NODO *qAux; //Declaro el nodo auxiliar que voy a usar para guardar el nuevo elemento
-        qAux = (NODO *)malloc(sizeof(NODO)); // Pido memoria para el nuevo nodo
-        if (qAux != NULL){                                                  // Compruebo que me han dado memoria
-            qAux->Elemento =(void*) malloc(strlen(Elemento) + 1); // Pido memoria para el puntero elemento
-            if (qAux->Elemento != NULL){// Compruebo que me hayan dado memoria para el elemento
-                qAux->Elemento = Elemento; // Asigno valor al puntero valor
-                qAux->Siguiente = NULL;    // Inicializo el puntero que apuntará al siguiente nodo
+        NODO *qAux; // Declaro el nodo auxiliar que voy a usar para guardar el nuevo elemento
+        qAux = Lista->Primero;
+        Lista->Primero = (NODO *)malloc(sizeof(NODO));
 
-                if (EsListaVacia(Lista)){ // Si la lista está vacía, mi nuevo nodo se mantiene apuntando a NULL                          
-                    Lista->Primero = qAux; // El puntero de la lista de inicio apunta al puntero auxiliar
-                    Lista->Ultimo = qAux;  // El puntero de la lista de final apunta al puntero auxiliar
-                }
-                else{ // El puntero Lista que apunta al último nodo no se modificará
-                    qAux->Siguiente = Lista->Primero; // Mi nuevo nodo ahora será el primero de la lista y apuntará al que antes era el primero
-                    Lista->Primero = qAux;            // El puntero primero de Lista debe apuntar al nuevo primer elemento que es qAux
-                }
-                free(qAux); // Libero la memoria del puntero auxiliar
-                return (0); // Todo ha salido bien
-            }
-        }
-        free(qAux); // Libero la memoria del puntero auxiliar
+        Lista->Primero->Elemento = Elemento; // Asigno valor al puntero valor
+        Lista->Primero->Siguiente = qAux;    // Inicializo el puntero que apuntará al siguiente nodo
+
+        
+        return (0); // Todo ha salido bien
     }
     return (-1); // Algo ha salido mal
 }

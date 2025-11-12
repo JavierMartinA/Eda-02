@@ -12,14 +12,16 @@
 void *BorrarListaIzquierda(LISTA *Lista)
 {
     //Codigo del alumno
+    void *Elemento;
     // Comprobar si la lista está vacía
     if (EsListaVacia(Lista) || Lista->Primero == NULL) {
-        return -1;
+        return (NULL);
     }
 
     // Declaramos el puntero tipo nodo al primer elemento de las listas
     NODO *qAux = Lista->Primero; //Este puntero almacena los datos del primer elemento
 
+    Elemento = qAux->Elemento;
     // El primer elemento de la lista pasa a ser el siguiente de qAux (O en otras palabras el primer elemento pasa a ser el siguiente)
     Lista->Primero = qAux->Siguiente;
 
@@ -31,5 +33,5 @@ void *BorrarListaIzquierda(LISTA *Lista)
     // 6. Liberar la memoria del nodo
     free(qAux);
 
-    return 0; 
+    return (Elemento); 
 }
