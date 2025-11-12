@@ -13,5 +13,15 @@ void *BorrarListaDerecha(LISTA *Lista)
 {
     
     // Código del Alumno
-    
+    if (!EsListaVacia(Lista) || Lista->Primero == NULL)
+    {
+        NODO *qAux;//Declaro el nodo auxiliar que voy a usar para guardar el nuevo elemento
+        qAux = (NODO *)malloc(sizeof(NODO)); // Pido memoria para el nuevo nodo
+        if (qAux != NULL)
+        {   
+            
+        }
+        free(qAux);  // Libero la memoria del puntero auxiliar
+    }
+    return (-1); // Algo ha salido mal
 }

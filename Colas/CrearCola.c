@@ -22,7 +22,9 @@ COLA *CrearCola()
     {
         c ->Cabecera = NULL;
         c ->Final = NULL;
+
+        return(c);
     }
     
-    return(c);
+    return NULL;
 }
