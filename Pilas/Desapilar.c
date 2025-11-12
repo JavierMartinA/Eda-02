@@ -15,23 +15,18 @@ PILA *Desapilar(PILA *Pila, void **Elemento)
 
     // Código del Alumno
     PILA *pAux; // Creo el puntero auxiliar
-    pAux = (PILA *)malloc(sizeof(PILA));
+    //pAux = (PILA *)malloc(sizeof(PILA));
     if (pAux != NULL)
     { // Compruebo que se me ha dado memoria para el puntero auxiliar
-        pAux->Elemento = (void *)malloc(strlen(*Elemento) + 1);
-        if (pAux->Elemento != NULL)
-        {                           // Compruebo que se me haya dado memoria para el puntero elemento del nuevo nodo
-            if (!EsPilaVacia(Pila)){ // Si la pila no está vacía, desapilo el primero elemento
-                pAux = Pila; // El puntero auxiliar apunta al primer nodo de la pila
-                strcpy(*Elemento, pAux->Elemento); // Copio el elemento del primer nodo al elemento del nodo auxiliar que he creado
-                Pila = Pila->Siguiente; // Hago que la pila apunte al siguiente nodo para poder olvidar el nodo del cuál acabo de cojer el elemento
-                free(pAux->Elemento); //Libero el espacio de memoria del elemento
-                free(pAux); // Libero la memoria del puntero auxiliar
-                return (Pila);
-            }
-        }
+        // if (!EsPilaVacia(Pila)){ // Si la pila no está vacía, desapilo el primero elemento
+            pAux = Pila; // El puntero auxiliar apunta al primer nodo de la pila
+            *Elemento = pAux->Elemento; // Copio el elemento del primer nodo al elemento del nodo auxiliar que he creado
+            Pila = pAux->Siguiente; // Hago que la pila apunte al siguiente nodo para poder olvidar el nodo del cuál acabo de cojer el elemento
+            free(pAux);
+        // }
+        
     }
-    free(pAux->Elemento); //Libero el espacio de memoria del elemento
-    free(pAux); // Libero la memoria del puntero auxiliar
+     // Libero la memoria del puntero auxiliar
+    return (Pila);
     
 }
