@@ -19,6 +19,7 @@ void *BorrarListaIzquierda(LISTA *Lista)
 
     // Declaramos el puntero tipo nodo al primer elemento de las listas
     NODO *qAux = Lista->Primero; //Este puntero almacena los datos del primer elemento
+    void *elemento = qAux->Elemento;
 
     // El primer elemento de la lista pasa a ser el siguiente de qAux (O en otras palabras el primer elemento pasa a ser el siguiente)
     Lista->Primero = qAux->Siguiente;
@@ -28,8 +29,8 @@ void *BorrarListaIzquierda(LISTA *Lista)
         Lista->Ultimo = NULL;
     }
 
-    // 6. Liberar la memoria del nodo
+    // Liberar la memoria del nodo
     free(qAux);
 
-    return 0; 
+    return elemento; 
 }
