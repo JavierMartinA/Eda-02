@@ -25,11 +25,13 @@ PILA *Desapilar(PILA *Pila, void **Elemento)
                 pAux = Pila; // El puntero auxiliar apunta al primer nodo de la pila
                 strcpy(*Elemento, pAux->Elemento); // Copio el elemento del primer nodo al elemento del nodo auxiliar que he creado
                 Pila = Pila->Siguiente; // Hago que la pila apunte al siguiente nodo para poder olvidar el nodo del cuál acabo de cojer el elemento
+                free(pAux->Elemento); //Libero el espacio de memoria del elemento
                 free(pAux); // Libero la memoria del puntero auxiliar
                 return (Pila);
             }
         }
     }
+    free(pAux->Elemento); //Libero el espacio de memoria del elemento
     free(pAux); // Libero la memoria del puntero auxiliar
     
 }
