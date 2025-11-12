@@ -14,10 +14,8 @@ bool EsListaVacia(LISTA *Lista)
 {
     
     // Código del Alumno
-    if(Lista==NULL || Lista->Primero==NULL){//si la funcion recibe un NULL a la hora de chequear los punteros de la lista
+    if(Lista==NULL){//si la funcion recibe un NULL a la hora de chequear los punteros de la lista
         return TRUE;//devuelve un TRUE si la estructura entera es NULL o si al menos el primer elemento es NULL
     }
-    else{
         return FALSE;//Si los punteros de lista tienen un valor, quiere decir que existen elementos dentro
-    }
 }
