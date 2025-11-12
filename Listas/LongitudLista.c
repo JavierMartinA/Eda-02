@@ -13,5 +13,21 @@ int LongitudLista(LISTA *Lista)
 {
     
     // Código del Alumno
-    
+    if(Listas==NULL){
+        return 0; //Caso que la lista este vacia o sea nula
+    }
+
+    int longitud = 0; //Variable que lleva la cuenta del numero de elementos dentro de la lista
+
+    NODO *aux = Lista->Primero; //Puntero tipo nodo para recorrer la lista, lo inicializamos al primer elemento
+
+    //recorremos la lista y contamos cuantos elementos encuentra
+
+    while(aux!=NULL){
+        longitud++; // por cada elemento que recorra longitud = longitud+1
+        aux = aux->Siguiente; // apuntamos el puntero auxiliar al siguiente elemento
+    }
+
+    return longitud; //devolvemos el tamaño final de la lista
+
 }
