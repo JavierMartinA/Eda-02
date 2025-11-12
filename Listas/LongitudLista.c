@@ -13,7 +13,7 @@ int LongitudLista(LISTA *Lista)
 {
     
     // Código del Alumno
-    if(Listas==NULL){
+    if(Lista==NULL){
         return 0; //Caso que la lista este vacia o sea nula
     }
 
