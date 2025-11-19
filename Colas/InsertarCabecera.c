@@ -22,7 +22,7 @@ int InsertarCabecera(COLA *Cola, void *Elemento)
     if (qAux != NULL) //Comprobamos que se ha reservado la memoría correctamente
     {
         //Mirar
-        if (!EsColaVacia(Cola)) //Comprobamos que exista la cola
+        if (Cola != NULL) //Comprobamos que exista la cola
         {
             qAux->Elemento= Elemento; //Apuntamos el puntero elemento al elemento que queremos añadir
             qAux->Siguiente = Cola->Cabecera; //Apuntamos el puntero siguiente a la cabecera original, porque queremos añadir una nueva cabecera y sustituir la actual

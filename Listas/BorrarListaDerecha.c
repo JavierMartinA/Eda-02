@@ -52,7 +52,7 @@ void *BorrarListaDerecha(LISTA *Lista)
             Lista->Ultimo = l;
         }
 
-        // free(qAux); // Libero la memoria del puntero auxiliar
+        free(qAux); // Libero la memoria del puntero auxiliar
         return (Elemento);
     }
     

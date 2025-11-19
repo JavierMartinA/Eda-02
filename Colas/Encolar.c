@@ -21,7 +21,7 @@ int Encolar(COLA *Cola, void *Elemento)
     // if (qAux != NULL) //Comprobar que se le ha asignado correctamente la memoria a qAux
     // {
         //Mirar
-        if (!EsColaVacia(Cola)) //Comprobar que la cola existe
+        if (Cola != NULL) //Comprobar que la cola existe
         {
             NODO *qAux; //creamos un puntero de tipo NODO
             qAux = Cola->Final;

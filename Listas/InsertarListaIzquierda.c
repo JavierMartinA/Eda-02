@@ -16,7 +16,7 @@ int InsertarListaIzquierda(LISTA *Lista, void *Elemento)
 
     // Código del Alumno
     // Código del Alumno
-    if (!EsListaVacia(Lista))
+    if (Lista != NULL)
     {
         NODO *qAux; // Declaro el nodo auxiliar que voy a usar para guardar el nuevo elemento
         qAux = Lista->Primero;

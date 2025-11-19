@@ -14,7 +14,7 @@ bool EsListaVacia(LISTA *Lista)
 {
 
     // Código del Alumno
-    if (Lista == NULL)
+    if (Lista == NULL || Lista->Primero == NULL)
     {                // si la funcion recibe un NULL a la hora de chequear el puntero lista
         return TRUE; // devuelve un TRUE si la estructura entera es NULL
     }
