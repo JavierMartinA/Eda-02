@@ -13,14 +13,14 @@ LISTA *CrearLista()
 {
     
     // Código del Alumno
-    LISTA *n; //creamos un puntero tipo lista para inicializarle memoria dinamica
-    n = (LISTA *)malloc(sizeof(LISTA));//memoria dinamica
+    LISTA *n; //Creamos un puntero tipo lista para inicializarle memoria dinamica
+    n = (LISTA *)malloc(sizeof(LISTA));//reservo memoria
 
     if(n!=NULL){ //Si se logra reservar memoria para la lista entonces
         n->Primero=NULL; //inicializamos lista vacia
         n->Ultimo=NULL;
     }
 
-    return n;
+    return n; //Devolvemos la lista
     
 }

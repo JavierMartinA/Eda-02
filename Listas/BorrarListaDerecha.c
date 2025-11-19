@@ -13,47 +13,48 @@ void *BorrarListaDerecha(LISTA *Lista)
 {
 
     // Código del Alumno
-    NODO *qAux, *l, *c; // Declaro el nodo auxiliar que voy a usar para guardar el nuevo elemento
+    NODO *qAux, *l, *c; // Declaro el nodo auxiliar que voy a usar para guardar el nuevo elemento, el puntero anterior al nodo eliminado para luego conectar la lista, y el puntero para recorrer la lista
 
-    void *Elemento;
+    void *Elemento; //Declaro el puntero elemento que será devuelto
 
-    int contador = 0;
+    int contador = 0; //Declaro un contador para recorrer la lista
 
-    if (!EsListaVacia(Lista) || Lista->Primero == NULL)
+    if (!EsListaVacia(Lista)) //Si la lista no existe o no contiene elementos 
     {
-        l = NULL;
-        c = Lista->Primero;
-        qAux = Lista->Primero;
+        l = NULL; //Inicializo el puntero que conectará la lista a null
+        c = Lista->Primero; //Inicializo el nodo para recorrer la lista al nodo inicial
+        qAux = Lista->Primero; //Inicializo el nodo auxiliar
 
-        while (c != NULL)
+        while (c != NULL) //Mientras el nodo no apunté una más allá del nodo final, continúo el bucle
         {
-            contador++;
-            c = c->Siguiente;
+            contador++; //Contador + 1
+            c = c->Siguiente; //Apunto el puntero al siguiente nodo
         }
 
-        if (contador == 1)
+        if (contador == 1) //Si solo hay un elemento en la lista
         {
-            Elemento = qAux->Elemento;
+            Elemento = qAux->Elemento; //Copio el elemento del nodo al puntero que devolveré
 
-            Lista->Primero = NULL;
+            Lista->Primero = NULL; //Reseteo la lista 
             Lista->Ultimo = NULL;
         }
-        else
+        else //Si hay más de un elemento en la lista
         {
-            for (int i = 0; i < contador - 1; i++)
+            for (int i = 0; i < contador - 1; i++) //Recorrerá hasta el nodo anterior al que debo eliminar
             {
-                l = qAux;
-                qAux = qAux->Siguiente;
+                //El puntero qAux acabará apuntando al nodo que debemos eliminar, y l apuntará al nodo anterior
+                l = qAux; //Apunto el puntero l, al puntero auxiliar.
+                qAux = qAux->Siguiente; //El puntero auxiliar apunta al siguiente elemento
             }
 
-            Elemento = qAux->Elemento;
+            Elemento = qAux->Elemento; //Copio el elemento del nodo que está apuntando mi puntero auxiliar
 
-            l->Siguiente = NULL;
-            Lista->Ultimo = l;
+            l->Siguiente = NULL; //El anterior nodo debe apuntar a null, ya que ahora es el final de la lista
+            Lista->Ultimo = l; //Apunta el ultimo de la lista al puntero l, que ahora es el nodo final
         }
 
-        free(qAux); // Libero la memoria del puntero auxiliar
-        return (Elemento);
+        free(qAux); // Libero la memoria del puntero auxiliar, eliminando el nodo
+        return (Elemento); //Devuelvo el elemento
     }
     
     return NULL; // Algo ha salido mal

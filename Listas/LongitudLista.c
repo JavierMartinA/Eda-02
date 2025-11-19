@@ -13,8 +13,9 @@ int LongitudLista(LISTA *Lista)
 {
     
     // Código del Alumno
-    if(Lista==NULL){
-        return 0; //Caso que la lista este vacia o sea nula
+    if(Lista==NULL) //Si la lista no existe
+    {
+        return 0; //Devuelvo 0
     }
 
     int longitud = 0; //Variable que lleva la cuenta del numero de elementos dentro de la lista
@@ -23,7 +24,8 @@ int LongitudLista(LISTA *Lista)
 
     //recorremos la lista y contamos cuantos elementos encuentra
 
-    while(aux!=NULL){
+    while(aux!=NULL) //Bucle que se mantendrá hasta haber recorrido toda la lista
+    {
         longitud++; // por cada elemento que recorra longitud = longitud+1
         aux = aux->Siguiente; // apuntamos el puntero auxiliar al siguiente elemento
     }
