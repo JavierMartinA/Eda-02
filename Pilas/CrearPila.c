@@ -12,8 +12,8 @@
 PILA *CrearPila()
 {
     // Código del Alumno
-    PILA* p; //Declaro el puntero de tipo PILA
-    p =(PILA*) malloc(sizeof(PILA)); //Pido memoria
-    p = NULL; //Inicializo el puntero a null
+    // PILA* p; //Declaro el puntero de tipo PILA
+    // p =(PILA*) malloc(sizeof(PILA)); //Pido memoria
+    return (NULL); //Inicializo el puntero a null
 
 }

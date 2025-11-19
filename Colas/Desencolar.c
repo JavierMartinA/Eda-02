@@ -34,7 +34,7 @@ void *Desencolar(COLA *Cola)
                 Cola->Cabecera = Cola->Cabecera->Siguiente; // Movemos la cabecera al siguiente elemento de la cola
             }
 
-            free(qAux);     // Liberamos el puntero qAux, eliminando de esa forma el elemnto de la cabecera original
+            // free(qAux);     // Liberamos el puntero qAux, eliminando de esa forma el elemnto de la cabecera original
             return (valor); // retornamos el elemento eliminado
         }
     // }

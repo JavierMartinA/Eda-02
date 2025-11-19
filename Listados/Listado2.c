@@ -25,6 +25,7 @@ void Listado2(DISCO **Orden,int NumeroFichas, DISCO *Fichas)
     int i,j;
     char *Linea, Autor[256];            // Puntero a una línea de pantalla y "Apellidos, Nombre"
     int Tecla;                          // Tecla pulsada
+    int contador = 0;
 
     
     // Creación de los TADs
@@ -173,6 +174,8 @@ void Listado2(DISCO **Orden,int NumeroFichas, DISCO *Fichas)
     // Se borran las líneas de Anteriores, desapilándolas y liberando el espacio de la línea formateada
     if (Anteriores != NULL) {
         while(EsPilaVacia(Anteriores) == false) {
+            contador ++;
+            VentanaError("Contador");
             Anteriores=Desapilar(Anteriores,(void **) &Linea);
             free(Linea);
         }
